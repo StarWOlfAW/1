@@ -1,6 +1,9 @@
 
-a=input(int)
-b=input(int)
-if a > b: print("a больше b")
-if b > a: print("b больше a")
-if a == b: print("a и b равны")
+a = float(input())
+b = float(input())
+if a > b: 
+    print("a больше b")
+if b > a: 
+    print("b больше a")
+else : 
+    print("a и b равны")
