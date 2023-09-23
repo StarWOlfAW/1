@@ -5,5 +5,5 @@ if a > b:
     print("a больше b")
 if b > a: 
     print("b больше a")
-else : 
+else: 
     print("a и b равны")
