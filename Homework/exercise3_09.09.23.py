@@ -1,4 +1,4 @@
-from math import sqrt #Это мне предложил сам VS code. Похоже что это импорт команд из библиотеки?????
+from math import  sqrt
 
 x = float(input("x ="))
 y = float(input("y ="))
