@@ -1,9 +1,9 @@
 x = input()
-l = x.count('(')
-r = x.count (')')
-if l > r:
-    print(f"Не хватает {l - r} закрывающих скобок")
-elif r > l:
-    print(f"Не хватает {r - l} открывающих скобок")
+y = x.count('(')
+r = x.count(')')
+if y > r:
+    print(f"Не хватает {y - r} закрывающих скобок")
+elif r > y:
+    print(f"Не хватает {r - y} открывающих скобок")
 else:
     print("Все правильно")
