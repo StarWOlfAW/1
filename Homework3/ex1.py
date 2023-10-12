@@ -5,6 +5,5 @@ def thv(x) -> list:
         que.append(x)
         x = input()
     return que
-
-
-print(thv(input()))
+if __name__ == "__main__":
+    print(thv(input()))
