@@ -1,13 +1,11 @@
-from math import sqrt, ceil
+from math import isqrt
 
 
-def numby(num=int, cur=2, c=0):
-    c = ceil(sqrt(num))
-    for cur in range(2, c):
-        if num % cur == 0:
+def numby(num):
+    for cur in range(2, isqrt(num) + 1):
+        if not num % cur:
             return False
-            break
-        return True
+    return True
 
 
 print(numby(int(input())))
