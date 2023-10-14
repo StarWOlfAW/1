@@ -1,6 +1,7 @@
 from ex1 import thv
 
-def mid(*num) -> float:   #каждое число  к float
+
+def mid(*num) -> float:
     return sum(num) / len(num)
 
 
