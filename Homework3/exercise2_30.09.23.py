@@ -10,6 +10,6 @@ def sea(n: int) -> str:
             return "Осень"
         case _:
             return "Неправильный формат"
-print(sea(int(input())))
 
-    
+
+print(sea(int(input())))
