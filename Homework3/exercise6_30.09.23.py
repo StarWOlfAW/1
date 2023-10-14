@@ -1,14 +1,13 @@
-def numby(num, cur = 1, c = 0):
-    for i in range (num):
+from math import sqrt, ceil
+
+
+def numby(num=int, cur=2, c=0):
+    c = ceil(sqrt(num))
+    for cur in range(2, c):
         if num % cur == 0:
-            c += 1
-            cur += 1
-        elif num % cur != 0:
-            cur += 1
-            continue
-    if c > 2:
-        return False
-    else:
+            return False
+            break
         return True
-    
+
+
 print(numby(int(input())))
