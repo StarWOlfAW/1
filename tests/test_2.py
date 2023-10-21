@@ -1,6 +1,14 @@
+import pytest
 from Homework4.ex2 import cn
 
 
-def test():
-    assert cn(5) == 120
-    assert cn(4) == 24
+@pytest.mark.parametrize(
+    ('n', 'end'),
+    [
+        (5, 120),
+        (4, 24),
+        (0, 1)
+    ]
+)
+def test(n, end):
+    assert cn(n) == end
