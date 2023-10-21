@@ -1,8 +1,8 @@
-from math import factorial
-
-
 def cn(n):
-    return factorial(n)
+    if n < 2:
+        return 1
+    return n * cn(n - 1)
 
-if __name__ =="__main__":
+
+if __name__ == "__main__":
     print(cn(int(input())))
