@@ -1,7 +1,9 @@
 from Homework3.ex1 import thv
 
 
-def find_bin(place, num):
+def find_bin(place :list, num):
+    if place == []:
+        return
     mid = len(place) // 2
     small = 0
     big = len(place) -1
@@ -11,12 +13,9 @@ def find_bin(place, num):
         else:
             big = mid - 1
         mid = (small + big) // 2
-
-    if small > big:
-        return("NaN")
-    else:
+    if small <= big:
         return mid
 
 
 if __name__ == "__main__":
-    print(find_bin(list(map(float, thv(input()))), float(input())))
+    print(find_bin(list(map(float, thv(input()))), int(input())))
