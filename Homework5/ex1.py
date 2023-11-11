@@ -1,21 +1,12 @@
-from Homework3.ex1 import thv
-
-
-def find_bin(place :list, num):
-    if place == []:
-        return
-    mid = len(place) // 2
+def find_bin(place, num):
     small = 0
-    big = len(place) -1
-    while place[mid] != num and small <= big:
-        if num > place[mid]:
-            small = mid + 1
-        else:
-            big = mid - 1
+    big = len(place) - 1
+    this = None
+    while small <= big:
         mid = (small + big) // 2
-    if small <= big:
-        return mid
-
-
-if __name__ == "__main__":
-    print(find_bin(list(map(float, thv(input()))), int(input())))
+        if place[mid] >= num:
+            this = mid
+            big = mid - 1
+        else:
+            small = mid + 1
+    return this
