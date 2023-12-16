@@ -1,9 +1,9 @@
 import math
 
 def buble(list):
-    for i in range(0, len(list) - 1):
-        for k in range(0, len(list) - 1):
-            if (list[k] > list[k+1]):
+    for i in range(len(list) - 1):
+        for k in range(len(list) - 1):
+            if list[k] > list[k+1]:
                 list[k], list[k+1] = list[k+1], list[k]
     return list
 
