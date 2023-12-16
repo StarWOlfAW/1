@@ -20,7 +20,7 @@ def quick(list):
 
 
 def stalin(list):
-    if len(list) == 0:
+    if not list:
         return list
     sorted = [list[0]]
     for i in range(1, len(list)):
