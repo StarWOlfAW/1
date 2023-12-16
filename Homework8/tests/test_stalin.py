@@ -1,5 +1,5 @@
 import pytest
-from Homework8.sort import Stalin
+from Homework8.sort import stalin
 
 
 @pytest.mark.parametrize(
