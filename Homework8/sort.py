@@ -11,20 +11,19 @@ def buble(list):
 def quick(list):
     if len(list) <= 1:
         return list
-    else:
-        medium = math.ceil(len(list)/2)
-        q = list[medium]
-        b = []
-        s = []
-        m = []
-        for n in list:
-            if n < q:
-                b.append(n)
-            elif n > q:
-                s.append(n)
-            else:
-                m.append(n)
-        return quick(b) + m + quick(s)
+    medium = math.ceil(len(list)/2)
+    q = list[medium]
+    b = []
+    s = []
+    m = []
+    for n in list:
+        if n < q:
+            b.append(n)
+        elif n > q:
+            s.append(n)
+        else:
+            m.append(n)
+    return quick(b) + m + quick(s)
 
 
 def Stalin(list):
