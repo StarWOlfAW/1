@@ -22,12 +22,11 @@ def quick(list):
 def Stalin(list):
     if len(list) == 0:
         return list
-    else :
-        sorted = [list[0]]
-        for i in range(1, len(list)):
-            if list[i] >= sorted[-1]:
-                sorted.append(list[i])
-        return sorted
+    sorted = [list[0]]
+    for i in range(1, len(list)):
+        if list[i] >= sorted[-1]:
+            sorted.append(list[i])
+    return sorted
     
 
 #if __name__ =='__main__':
