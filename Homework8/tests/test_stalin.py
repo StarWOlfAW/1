@@ -13,4 +13,4 @@ from Homework8.sort import stalin
     ]
 )
 def test(list, outcome):
-    assert Stalin(list) == outcome
+    assert stalin(list) == outcome
