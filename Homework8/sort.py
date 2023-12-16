@@ -4,9 +4,7 @@ def buble(list):
     for i in range(0, len(list) - 1):
         for k in range(0, len(list) - 1):
             if (list[k] > list[k+1]):
-                short = list[k]
-                list[k] = list[k+1]
-                list[k+1] = short
+                list[k], list[k+1] = list[k+1], list[k]
     return list
 
 
