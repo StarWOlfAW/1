@@ -13,16 +13,9 @@ def quick(list):
         return list
     medium = math.ceil(len(list)/2)
     q = list[medium]
-    b = []
-    s = []
-    m = []
-    for n in list:
-        if n < q:
-            b.append(n)
-        elif n > q:
-            s.append(n)
-        else:
-            m.append(n)
+    b = [x for x in list if x < q]
+    s = [x for x in list if x = q]
+    m = [x for x in list if x > q]
     return quick(b) + m + quick(s)
 
 
