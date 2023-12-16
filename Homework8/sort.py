@@ -19,7 +19,7 @@ def quick(list):
     return quick(b) + m + quick(s)
 
 
-def Stalin(list):
+def stalin(list):
     if len(list) == 0:
         return list
     sorted = [list[0]]
