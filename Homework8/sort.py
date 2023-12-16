@@ -38,8 +38,8 @@ def Stalin(list):
         return sorted
     
 
-if __name__ =='__main__':
-    (listt) = [5, 1, 4, 7, 3, 2, 6]
-    srt = Stalin(listt)
-    print(srt)
+#if __name__ =='__main__':
+    #(listt) = [5, 1, 4, 7, 3, 2, 6]
+    #srt = Stalin(listt)
+    #print(srt)
     
