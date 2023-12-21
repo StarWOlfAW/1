@@ -14,23 +14,17 @@ def quick(list):
     medium = math.ceil(len(list)/2)
     q = list[medium]
     b = [x for x in list if x < q]
-    s = [x for x in list if x = q]
-    m = [x for x in list if x > q]
+    s = [x for x in list if x > q]
+    m = [x for x in list if x == q]
     return quick(b) + m + quick(s)
 
 
-def stalin(list):
-    if not list:
-        return list
-    sorted = [list[0]]
-    for i in range(1, len(list)):
-        if list[i] >= sorted[-1]:
-            sorted.append(list[i])
-    return sorted
+def stalin(list):return list if not list else [list[x] for x in range(len(list)) if
+                                                                x == 0 or list[x] > max(list[:x])]
     
+
 
 #if __name__ =='__main__':
     #(listt) = [5, 1, 4, 7, 3, 2, 6]
     #srt = Stalin(listt)
     #print(srt)
-    
