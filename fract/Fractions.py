@@ -8,10 +8,10 @@ class Fraction:
         self.numer = int(input())
         self.denom = int(input())
         if self.denom == 0:
-            return "Не делить на ноль!"
-m1 = Fraction()
-m1.input()
-print(m1)
+            return " не делить на ноль!"
+##m1 = Fraction()
+##m1.input()
+##print(m1)
 
 
 
