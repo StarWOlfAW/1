@@ -1,16 +1,19 @@
 class Fraction:
-    def __init__(self, numer=1, denom=1):
+    def __init__(self, numer = 1, denom = 1):
         self.numer = numer
-        self.denum = denom
+        self.denom = denom
         if self.denom == 0:
-            return " не делить на ноль!"
+            raise ZeroDivisionError("Деление на ноль")
     def __str__(self):
-        return str(self.numer) + "/" + str(self.denom)
+        if self.denom == 0:
+            return "Деление на ноль"
+        else:
+            return str(self.numer) + "/" + str(self.denom)
     def input(self):
         self.numer = int(input())
         self.denom = int(input())
         if self.denom == 0:
-            return " не делить на ноль!"
+            return "Деление на ноль"
 ##m1 = Fraction()
 ##m1.input()
 ##print(m1)
