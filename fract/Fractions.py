@@ -2,6 +2,8 @@ class Fraction:
     def __init__(self, numer=1, denom=1):
         self.numer = numer
         self.denum = denom
+        if self.denom == 0:
+            return " не делить на ноль!"
     def __str__(self):
         return str(self.numer) + "/" + str(self.denom)
     def input(self):

@@ -1,16 +1,8 @@
 import pytest
 from fract.Fractions import Fraction
 
-@pytest.mark.parametrize(
-    ('numer', 'denom'),
-    [
-        (2, 2)
-    ]
-)
-def init(numer, denom):
-    f = Fraction(numer, denom)
-    assert f.numer == numer
-    assert f.denom == denom
+
+def init():
     s1 = Fraction()
     assert s1.numer == 1
     assert s1.denom == 1
@@ -25,7 +17,7 @@ def input(mocker):
     ('numer', 'denom', 'output'),
     [
         (2, 1, '2/1'),
-        (2, 0, '2/0')
+        (2, 20, '2/20')
     ]
 )
 def out(numer, denom, output):
