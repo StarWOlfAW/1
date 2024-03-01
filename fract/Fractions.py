@@ -1,3 +1,4 @@
+from math import gcd
 class Fraction:
     def __init__(self, numer = 1, denom = 1):
         self.numer = numer
@@ -14,9 +15,17 @@ class Fraction:
         self.denom = int(input())
         if self.denom == 0:
             return "Деление на ноль"
-##m1 = Fraction()
-##m1.input()
-##print(m1)
+    def reduce(self):
+        print(gcd(self.numer, self.denom))
+        self.numer /= gcd(self.denom, self.numer)
+        self.denom /= gcd(self.denom, self.numer)
+            
+        
+
+
+m1 = Fraction(11, 22)
+m1.reduce
+
 
 
 
