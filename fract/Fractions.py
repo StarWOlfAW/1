@@ -3,26 +3,42 @@ class Fraction:
     def __init__(self, numer = 1, denom = 1):
         self.numer = numer
         self.denom = denom
-        if self.denom == 0:
-            raise ZeroDivisionError("Деление на ноль")
+        self.validate()
+        
     def __str__(self):
         return str(self.numer) + "/" + str(self.denom)
+    
     def input(self):
-        self.numer = int(input())
-        self.denom = int(input())
-        if self.denom == 0:
-            return "Деление на ноль"
+        try:
+            self.numer = int(input())
+            self.denom = int(input())
+            self.validate()
+        except ValueError:
+            print ("Вводите только десятеричные числа")
+            return False
+        return True
+
     def reduce(self):
-        print(gcd(self.numer, self.denom))
-        self.numer /= gcd(self.denom, self.numer)
-        self.denom /= gcd(self.denom, self.numer)
+        if self.denom % self.numer == 0:
+            greatcd = gcd(self.numer, self.denom)
+            self.numer = self.numer // greatcd
+            self.denom = self.denom // greatcd
+
+    def validate(self):
+        if self.denom == 0:
+            raise ZeroDivisionError("Деление на ноль")
+
+
+class ReduceFraction(Fraction):
+    def __init__(self, numer, denom):
+        super().__init__(numer, denom)
+        self.reduce()
             
         
 
 
-m1 = Fraction(11, 22)
-m1.reduce
-
+m1 = Fraction(-10, -20)
+m1.input()
 
 
 
