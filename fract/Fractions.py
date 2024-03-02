@@ -19,10 +19,11 @@ class Fraction:
         return True
 
     def reduce(self):
-        if self.denom % self.numer == 0:
-            greatcd = gcd(self.numer, self.denom)
-            self.numer = self.numer // greatcd
-            self.denom = self.denom // greatcd
+        greatcd = gcd(self.numer, self.denom)
+        if greatcd == 0:
+            greatcd += 1
+        self.numer = self.numer // greatcd
+        self.denom = self.denom // greatcd
 
     def validate(self):
         if self.denom == 0:
@@ -37,8 +38,8 @@ class ReduceFraction(Fraction):
         
 
 
-m1 = Fraction(-10, -20)
-m1.input()
+##m1 = Fraction(-10, -20)
+##m1.input()
 
 
 
