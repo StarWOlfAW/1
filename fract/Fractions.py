@@ -20,8 +20,6 @@ class Fraction:
 
     def reduce(self):
         greatcd = gcd(self.numer, self.denom)
-        if greatcd == 0:
-            greatcd += 1
         self.numer = self.numer // greatcd
         self.denom = self.denom // greatcd
 
