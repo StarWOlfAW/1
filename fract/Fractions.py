@@ -26,6 +26,17 @@ class Fraction:
     def validate(self):
         if self.denom == 0:
             raise ZeroDivisionError("Деление на ноль")
+    def __add__(self, other):
+        if self.denom != other.denom:
+            lcm = (self.denom * other.denom // gcd(self.numer, other.denom))
+            first = lcm // self.denom
+            second = lcm // other.denom
+            self.numer = self.numer * first
+            other.numer = other.numer * second
+            self.denom = lcm
+            other.denom = lcm
+        self.numer = self.numer + other.numer
+    def
 
 
 class ReduceFraction(Fraction):
