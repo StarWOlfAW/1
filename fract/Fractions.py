@@ -26,6 +26,7 @@ class Fraction:
     def validate(self):
         if self.denom == 0:
             raise ZeroDivisionError("Деление на ноль")
+            
     def __add__(self, other):
         if self.denom != other.denom:
             lcm = (self.denom * other.denom // gcd(self.denom, other.denom))
@@ -38,6 +39,7 @@ class Fraction:
             wield = other.numer
             lcm = self.denom
         return self.__class__(yeet + wield, lcm)
+        
     def __sub__(self, other):
         if self.denom != other.denom:
             lcm = (self.denom * other.denom // gcd(self.denom, other.denom))
@@ -50,6 +52,7 @@ class Fraction:
             wield = other.numer
             lcm = self.denom
         return self.__class__(yeet - wield, lcm)
+        
     def __eq__(self, other):
         x = self
         y = other
