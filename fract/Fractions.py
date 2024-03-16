@@ -37,7 +37,7 @@ class Fraction:
             yeet = self.numer
             wield = other.numer
             lcm = self.denom
-        return Fraction(yeet + wield, lcm)
+        return self.__class__(yeet + wield, lcm)
     def __sub__(self, other):
         if self.denom != other.denom:
             lcm = (self.denom * other.denom // gcd(self.denom, other.denom))
@@ -49,7 +49,7 @@ class Fraction:
             yeet = self.numer
             wield = other.numer
             lcm = self.denom
-        return Fraction(yeet - wield, lcm)
+        return self.__class__(yeet - wield, lcm)
     def __eq__(self, other):
         x = self
         y = other

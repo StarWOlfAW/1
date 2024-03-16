@@ -72,7 +72,9 @@ def test_instant(numer, denom, output):
     [
         (1, 2, 1, 3, 5, 6),
         (0, 2, 1, 5, 2, 10),
-        (3, 3, 1, 2, 9, 6)
+        (3, 3, 1, 2, 9, 6),
+        (-1, 2, -3, 4, -5, 4),
+        (-2, 3, 1, 2, -1, 6)
     ]
 )
 def test_sum(numer, denom, numer2, denom2, numer3, denom3):
@@ -84,7 +86,8 @@ def test_sum(numer, denom, numer2, denom2, numer3, denom3):
     [
         (1, 2, 1, 3, 1, 6),
         (0, 2, 1, 5, -2, 10),
-        (3, 3, 1, 2, 3, 6)
+        (3, 3, 1, 2, 3, 6),
+        (-1, 2, -3, 4, 1, 4)
     ]
 )
 def test_sub(numer, denom, numer2, denom2, numer3, denom3):
@@ -96,8 +99,25 @@ def test_sub(numer, denom, numer2, denom2, numer3, denom3):
     [
         (1, 2, 1, 3, 1, 6),
         (0, 2, 1, 5, -1, 5),
-        (3, 3, 1, 2, 1, 2)
+        (3, 3, 1, 2, 1, 2),
+        (-1, 2, -3, 4, 1, 4)
     ]
 )
 def test_redsub(numer, denom, numer2, denom2, numer3, denom3):
-    assert ReduceFraction(numer, denom) - Fraction(numer2, denom2) == Fraction(numer3, denom3)
+    assert ReduceFraction(numer, denom) - ReduceFraction(numer2, denom2) == Fraction(numer3, denom3)
+    assert isinstance((ReduceFraction(numer, denom) - ReduceFraction(numer2, denom2)), ReduceFraction)
+
+@pytest.mark.parametrize(
+    ('numer', 'denom', 'numer2', 'denom2', 'numer3', 'denom3'),
+    [
+        (1, 2, 1, 3, 5, 6),
+        (0, 2, 1, 5, 1, 5),
+        (3, 3, 1, 2, 9, 6),
+        (-1, 2, -3, 4, -5, 4),
+        (-2, 3, 1, 2, -1, 6),
+        (1, 2, 1, 2, 1, 1)
+    ]
+)
+def test_redsum(numer, denom, numer2, denom2, numer3, denom3):
+    assert ReduceFraction(numer, denom) + ReduceFraction(numer2, denom2) == Fraction(numer3, denom3)
+    assert isinstance((ReduceFraction(numer, denom) + ReduceFraction(numer2, denom2)), ReduceFraction)
