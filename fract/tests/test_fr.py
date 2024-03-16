@@ -76,5 +76,28 @@ def test_instant(numer, denom, output):
     ]
 )
 def test_sum(numer, denom, numer2, denom2, numer3, denom3):
-    print (Fraction(numer, denom) + Fraction(numer2, denom2))
     assert Fraction(numer, denom) + Fraction(numer2, denom2) == Fraction(numer3, denom3)
+
+
+@pytest.mark.parametrize(
+    ('numer', 'denom', 'numer2', 'denom2', 'numer3', 'denom3'),
+    [
+        (1, 2, 1, 3, 1, 6),
+        (0, 2, 1, 5, -2, 10),
+        (3, 3, 1, 2, 3, 6)
+    ]
+)
+def test_sub(numer, denom, numer2, denom2, numer3, denom3):
+    assert Fraction(numer, denom) - Fraction(numer2, denom2) == Fraction(numer3, denom3)
+
+
+@pytest.mark.parametrize(
+    ('numer', 'denom', 'numer2', 'denom2', 'numer3', 'denom3'),
+    [
+        (1, 2, 1, 3, 1, 6),
+        (0, 2, 1, 5, -1, 5),
+        (3, 3, 1, 2, 1, 2)
+    ]
+)
+def test_redsub(numer, denom, numer2, denom2, numer3, denom3):
+    assert ReduceFraction(numer, denom) - Fraction(numer2, denom2) == Fraction(numer3, denom3)
