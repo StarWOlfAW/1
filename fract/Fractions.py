@@ -27,16 +27,39 @@ class Fraction:
         if self.denom == 0:
             raise ZeroDivisionError("Деление на ноль")
     def __add__(self, other):
-        if self.denom != other.denom:
+        if self.denom != other.denom and self.denom or other.denom != 0:
             lcm = (self.denom * other.denom // gcd(self.numer, other.denom))
             first = lcm // self.denom
             second = lcm // other.denom
-            self.numer = self.numer * first
-            other.numer = other.numer * second
-            self.denom = lcm
-            other.denom = lcm
-        self.numer = self.numer + other.numer
-    def
+            yeet = self.numer * first
+            wield = other.numer * second
+        else:
+            yeet = self.numer
+            wield = other.numer
+            lcm = self.denom
+        return Fraction(yeet + wield, lcm)
+    def __sub__(self, other):
+        if self.denom != other.denom and self.denom or other.denom != 0:
+            lcm = (self.denom * other.denom // gcd(self.numer, other.denom))
+            first = lcm // self.denom
+            second = lcm // other.denom
+            yeet = self.numer * first
+            wield = other.numer * second
+        else:
+            yeet = self.numer
+            wield = other.numer
+            lcm = self.denom
+        return Fraction(yeet - wield, lcm)
+    def __eq__(self, other):
+        x = self
+        y = other
+        x.reduce()
+        y.reduce()
+        if x.numer != y.numer or x.denom != y.denom:
+            return False
+        else:
+            return True
+        
 
 
 class ReduceFraction(Fraction):
@@ -46,9 +69,8 @@ class ReduceFraction(Fraction):
             
         
 
-
-##m1 = Fraction(-10, -20)
-##m1.input()
-
+m1 = Fraction(0, 2)
+m2 = Fraction(1, 5)
+print(m1 + m2)
 
 

@@ -65,3 +65,16 @@ def test_error2(mocker):
 )
 def test_instant(numer, denom, output):
     assert str(ReduceFraction(numer, denom)) == output
+
+
+@pytest.mark.parametrize(
+    ('numer', 'denom', 'numer2', 'denom2', 'numer3', 'denom3'),
+    [
+        (1, 2, 1, 3, 5, 6),
+        (0, 2, 1, 5, 2, 10),
+        (3, 3, 1, 2, 9, 6)
+    ]
+)
+def test_sum(numer, denom, numer2, denom2, numer3, denom3):
+    print (Fraction(numer, denom) + Fraction(numer2, denom2))
+    assert Fraction(numer, denom) + Fraction(numer2, denom2) == Fraction(numer3, denom3)
