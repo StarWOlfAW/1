@@ -8,7 +8,7 @@ class Message(BaseModel):
 @app.get("/chat")
 def get_messages() -> list[Message]:
     return messages
-@app.post("/chat")
+@app.post("/message")
 def send_message(author:str, text:str):
     t = Message(author=author, text=text)
     messages.append(t)
